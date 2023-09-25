@@ -1,0 +1,125 @@
+$duration: .6s;
+
+.uc-animated-button {
+	width: 200px;
+	height: 100px;
+
+	position: relative;
+
+	display: flex;
+    align-items: center;
+    justify-content: center;
+
+	margin: 100px;
+
+	cursor: pointer;
+
+    font-weight: bold;
+}
+
+.uc-animated-button span {
+    position: absolute;
+    display: block;
+	  background: rgb(0, 200, 0);
+	  transition: all $duration/3 linear;
+}
+
+.uc-animated-button .top-left,
+.uc-animated-button .top-right,
+.uc-animated-button .bottom-left,
+.uc-animated-button .bottom-right {
+    width: 50%;
+    height: 5px;
+    transform: scaleX(0);
+}
+.uc-animated-button .left,
+.uc-animated-button .right {
+    width: 5px;
+    height: 100%;
+    transform: scaleY(0);
+}
+
+.uc-animated-button .top-left {
+    top: 0;
+    left: 0;
+    transform-origin: top left;
+}
+.uc-animated-button .top-right {
+    top: 0;
+    left: 50%;
+    transform-origin: top left;
+}
+.uc-animated-button .top-right {
+    transition-delay: $duration*2/3;
+}
+.uc-animated-button .right {
+    top: 0;
+    right: 0;
+    transform-origin: top left;
+}
+.uc-animated-button .right {
+    transition-delay: $duration/3;
+}
+.uc-animated-button .bottom-left {
+    bottom: 0;
+    right: 50%;
+    transform-origin: top right;
+}
+.uc-animated-button .bottom-left {
+    transition-delay: $duration*2/3;
+}
+.uc-animated-button .bottom-right {
+    bottom: 0;
+    right: 0;
+    transform-origin: top right;
+}
+.uc-animated-button .left {
+    top: 0;
+    left: 0;
+    transform-origin: bottom left;
+}
+.uc-animated-button .left {
+    transition-delay: $duration/3;
+}
+
+.uc-animated-button:hover {
+    span {
+        transition: all $duration/6 linear;
+    }
+    .top {
+        transition-delay: 0s;
+    }
+    .top-right {
+        transition-delay: 0s;
+    }
+    .right {
+        transition-delay: $duration/6;
+    }
+    .bottom-right {
+        transition-delay: $duration/3;
+    }
+    .bottom-left {
+        transition-delay: $duration/2;
+    }
+    .left {
+        transition-delay: $duration*2/3;
+    }
+    .top-left {
+        transition-delay: $duration*5/6;
+    }
+    .bottom {
+        transition-delay: $duration/2;
+    }
+    .top,
+    .top-left,
+    .top-right,
+    .bottom,
+    .bottom-left,
+    .bottom-right {
+        transform: scaleX(1);
+    }
+    .left,
+    .right {
+        transform: scaleY(1);
+    }
+}
